@@ -364,6 +364,10 @@ func (r *GetFilterChangesRequest) UnmarshalJSON(data []byte) error {
 
 type EstimateGasResponse string
 
+// ========== eth_gasPrice ============= //
+
+type GasPriceResponse *ETHInt
+
 // ========== eth_getBlockByNumber ============= //
 
 type (

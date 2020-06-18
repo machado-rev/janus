@@ -69,6 +69,11 @@ func (m *Method) GetBlockCount() (resp *GetBlockCountResponse, err error) {
 	return
 }
 
+// hard coded for now as there is only the minimum gas price
+func (m *Method) GetGasPrice() (*big.Int, error) {
+	return big.NewInt(0x28), nil
+}
+
 func (m *Method) GetBlockHash(b *big.Int) (resp GetBlockHashResponse, err error) {
 	req := GetBlockHashRequest{
 		Int: b,
