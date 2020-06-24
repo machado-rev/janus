@@ -27,6 +27,7 @@ func (p *ProxyETHEstimateGas) Request(rawreq *eth.JSONRPCRequest) (interface{}, 
 		return nil, err
 	}
 
+	// qtum [code: -5] Incorrect address occurs here
 	qtumresp, err := p.CallContract(qtumreq)
 	if err != nil {
 		return nil, err

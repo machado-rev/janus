@@ -487,3 +487,11 @@ func (r *GetBalanceRequest) UnmarshalJSON(data []byte) error {
 }
 
 type GetBalanceResponse string
+
+// =======GetTransactionCount ============= //
+type (
+	GetTransactionCountRequest struct {
+		Address string
+		Tag     string
+	}
+)

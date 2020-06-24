@@ -23,6 +23,8 @@ func (p *ProxyETHCall) Request(rawreq *eth.JSONRPCRequest) (interface{}, error) 
 		return nil, err
 	}
 
+	fmt.Println("Call Request in ETH: %v", req)
+
 	return p.request(&req)
 }
 
@@ -52,10 +54,13 @@ func (p *ProxyETHCall) ToRequest(ethreq *eth.CallRequest) (*qtum.CallContractReq
 
 	if utils.IsEthHexAddress(from) {
 		from, err = p.FromHexAddress(from)
+		fmt.Printf("got from hex address: %v\n", from)
 		if err != nil {
 			return nil, err
 		}
 	}
+
+	fmt.Printf("ethreq.To: %v\n", ethreq.To)
 
 	return &qtum.CallContractRequest{
 		To:       ethreq.To,

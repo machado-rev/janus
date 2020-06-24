@@ -74,6 +74,13 @@ func (m *Method) GetGasPrice() (*big.Int, error) {
 	return big.NewInt(0x28), nil
 }
 
+// hard coded 0x1 due to the unique nature of Qtums UTXO system, might
+func (m *Method) GetTransactionCount(address string, status string) (*big.Int, error) {
+	// eventually might work this out to see if there's any transactions pending for an address in the mempool
+	// for now just always return 1
+	return big.NewInt(0x1), nil
+}
+
 func (m *Method) GetBlockHash(b *big.Int) (resp GetBlockHashResponse, err error) {
 	req := GetBlockHashRequest{
 		Int: b,

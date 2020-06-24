@@ -102,6 +102,7 @@ func DefaultProxies(qtumRPCClient *qtum.Qtum) []ETHProxy {
 		&Web3ClientVersion{},
 		&ProxyETHSign{Qtum: qtumRPCClient},
 		&ProxyETHGasPrice{Qtum: qtumRPCClient},
+		&ProxyETHTxCount{Qtum: qtumRPCClient},
 	}
 }
 
